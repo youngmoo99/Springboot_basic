@@ -1,0 +1,54 @@
+package com.in28minutes.learnspringframework.examples.d1;
+
+import java.util.Arrays;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Lazy;
+import org.springframework.stereotype.Component;
+
+import com.in28minutes.learnspringframework.game.GameRunner;
+import com.in28minutes.learnspringframework.game.GamingConsole;
+
+@Component
+class ClassA {
+	
+}
+
+@Component
+@Lazy
+class ClassB {
+	private ClassA classA; //classa로 빈생성 
+	public ClassB(ClassA classA) {
+		//Logic
+		//클래스b는 classa빈을 이용하여 직접 초기화 실행
+		System.out.println("Some Initialization Logic ");
+		this.classA = classA;
+	}
+	
+	public void doSomething() {
+		System.out.println("Do something");
+	}
+}
+
+
+@Configuration
+@ComponentScan
+public class LazyinitializationLauncherApplication {
+	
+
+	public static void main(String[] args) {
+		try (var context = new AnnotationConfigApplicationContext(LazyinitializationLauncherApplication.class)) {
+			
+			System.out.println("Initialziaofaf of completed");
+			context.getBean(ClassB.class).doSomething();
+			
+			
+			
+		}
+		
+
+	}
+
+}

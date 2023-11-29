@@ -1,0 +1,20 @@
+package com.in28minutes.learnspringframework.examples.a0;
+
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+
+public class 어노테이션정리 {
+
+	public static void main(String[] args) {
+		//1. @Configuration 
+		// 클래스가 1개 이상의 @Bean 메소드를 선언하고 스프링 컨테이너로 처리되어 빈 정의를 생성한다는 것을 나타냄
+		//즉 자바 설정 파일을 생성한다는 뜻
+		
+		
+		//2. @ComponentScan
+		// 특정 패키지를 정의하여 컴포넌트를 스캔할 수 있음
+		// 컴포넌트를 스캔할 수 있는 패키지를 지정할 수 있음
+
+	}
+
+}

@@ -1,0 +1,10 @@
+package com.in28minutes.learnspringframework.examples.a0;
+
+public class 어노테이션정리 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
